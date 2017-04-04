@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @restaurant.name %>
+</p>
+
+<p>
+  <strong>Avatar:</strong>
+  <%= image_tag @restaurant.avatar.url if @restaurant.avatar? %>
+</p>
+
+<p>
+  <strong>chosen:</strong>
+  <%= @restaurant.chosen %>
+</p>
+
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Home', root_path %>
