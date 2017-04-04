@@ -1,25 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* APP  play with nokogiri
+*	http://www.nokogiri.org/
+*  command line with nokogiri
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# Playing_with_nokogiri
+#TO look all rake  -T  OR rake -T importrest and to run rake importrest:new
+#rake importrest:new["www.xxxxxx.com"] oR rake importrest:new
