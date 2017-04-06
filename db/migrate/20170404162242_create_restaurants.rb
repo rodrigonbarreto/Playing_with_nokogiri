@@ -3,6 +3,7 @@ class CreateRestaurants < ActiveRecord::Migration[5.0]
     create_table :restaurants do |t|
       t.string :name
       t.string :avatar
+       t.string :link
       t.boolean :chosen, :default => false 
 
       t.timestamps
