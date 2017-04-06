@@ -17,13 +17,18 @@ namespace :importrest do
   	@test = open("#{url_search}")
     new_content = Nokogiri::HTML(@test)
  	restaurantes = new_content.css('#irestaurantlist').css('.restaurant').css('.logowrapper').css('.logo-n').css('.img-link')
-	.css('.restlogo').each do |row| 
+	.each do |row1| 
 
-	    
+	    row1.css('.restlogo').each do |row|
+      
 	    puts "#{row.attr('alt')}"
       a = Restaurant.find_or_initialize_by(name:  "#{row.attr('alt')}")
       a.remote_avatar_url = "http:#{row.attr('data-original')}"
+      a.link = "https://www.thuisbezorgd.nl#{row1.first[1]}"
       a.save
+      
+    end
+
 
 	 
 	end	

@@ -1,31 +1,35 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Restaurants</h1>
+   
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Avatar</th>
-      <th>chosen</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @restaurants.each do |restaurant| %>
-      <tr>
-        <td><%= restaurant.name %></td>
-        <td> <%= image_tag restaurant.avatar.url if restaurant.avatar? %></td>
-        <td><%= restaurant.chosen %></td>
-        <td><%= link_to 'Show', restaurant %></td>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <%= link_to 'New Restaurant', new_restaurant_path %>
+   <hr>
 
-<br>
 
-<%= link_to 'New Restaurant', new_restaurant_path %>
+      
+
+<div class="container-fluid">
+  <!-- add extra container element for Masonry -->
+  <div class="grid">
+    <!-- add sizing element for columnWidth -->
+    <div class="grid-sizer col-xs-<%=[7].sample %>">
+      <% @restaurants.each do |restaurant| %>
+        <%= link_to restaurant_path(restaurant),:target => "_blank" do %>
+          <%= image_tag restaurant.avatar.url if restaurant.avatar? %>
+          <%#= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      <% end %>
+    </div>
+    <!-- items use Bootstrap .col- classes -->
+    <div class="grid-item col-xs-8">
+      <!-- wrap item content in its own element -->
+      <div class="grid-item-content">...</div>
+    </div>
+    <div class="grid-item col-xs-4">
+      <div class="grid-item-content">...</div>
+    </div>
+    ...
+  </div>
+</div>

@@ -10,6 +10,8 @@
   <%= image_tag @restaurant.avatar.url if @restaurant.avatar? %>
 </p>
 
+
+<a href="<%=@restaurant.link%>" target="_blank" ><%=@restaurant.link %> </a>
 <p>
   <strong>chosen:</strong>
   <%= @restaurant.chosen %>
