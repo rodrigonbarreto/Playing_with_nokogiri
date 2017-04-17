@@ -40,6 +40,10 @@ gem "devise"
 gem 'globalize', git: 'https://github.com/globalize/globalize'
 gem 'activemodel-serializers-xml'
 #gem 'rails_admin_globalize_field'
+gem 'pg'
+gem 'rails-i18n', '~> 5.0.0' # For 5.0.x
+gem 'rails_admin_globalize_field'
+gem "paperclip", "~> 5.0.0"
 
 
 

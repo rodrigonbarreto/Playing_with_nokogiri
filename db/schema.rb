@@ -10,15 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170416124219) do
+ActiveRecord::Schema.define(version: 20170416190818) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "galleries", force: :cascade do |t|
+    t.integer  "restaurant_id"
+    t.string   "asset_file_name"
+    t.string   "asset_content_type"
+    t.integer  "asset_file_size"
+    t.datetime "asset_updated_at"
+    t.string   "name"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["restaurant_id"], name: "index_galleries_on_restaurant_id", using: :btree
+  end
+
+  create_table "restaurant_translations", force: :cascade do |t|
+    t.integer  "restaurant_id", null: false
+    t.string   "locale",        null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.text     "description"
+    t.index ["locale"], name: "index_restaurant_translations_on_locale", using: :btree
+    t.index ["restaurant_id"], name: "index_restaurant_translations_on_restaurant_id", using: :btree
+  end
 
   create_table "restaurants", force: :cascade do |t|
     t.string   "name"
-    t.string   "avatar"
     t.string   "link"
-    t.boolean  "chosen",     default: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.boolean  "chosen",             default: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.string   "asset_file_name"
+    t.string   "asset_content_type"
+    t.integer  "asset_file_size"
+    t.datetime "asset_updated_at"
   end
 
   create_table "users", force: :cascade do |t|
@@ -34,8 +62,9 @@ ActiveRecord::Schema.define(version: 20170416124219) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "galleries", "restaurants"
 end

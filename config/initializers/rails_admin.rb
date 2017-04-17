@@ -1,6 +1,10 @@
 RailsAdmin.config do |config|
 
   ### Popular gems integration
+  #config.included_models = ['Restaurant','Restaurant::Translation']
+
+  config.included_models = ['Restaurant','Restaurant::Translation','Gallery']
+
 
   ## == Devise ==
   # config.authenticate_with do
@@ -23,6 +27,7 @@ RailsAdmin.config do |config|
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar = true
 
+  
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory

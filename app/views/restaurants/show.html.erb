@@ -6,11 +6,20 @@
 </p>
 
 <p>
-  <strong>Avatar:</strong>
-  <%= image_tag @restaurant.avatar.url if @restaurant.avatar? %>
+  <strong>Description:</strong>
+  <%= @restaurant.description %>
 </p>
 
+<p>
+  <strong>Avatar:</strong>
+  <%= image_tag @restaurant.asset.url if @restaurant.asset? %>
+</p>
 
+<% @restaurant.galleries.each do |gallery| %>
+      <%= image_tag gallery.asset.url if gallery.asset? %>
+ <% end %>
+
+<br>
 <a href="<%=@restaurant.link%>" target="_blank" ><%=@restaurant.link %> </a>
 <p>
   <strong>chosen:</strong>
