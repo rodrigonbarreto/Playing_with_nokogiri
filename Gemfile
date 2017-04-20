@@ -49,6 +49,12 @@ gem "paperclip", "~> 5.0.0"
 
 
 
+group :test, :production do
+    gem 'pg'
+    gem 'rails_12factor'
+
+end
+
 
 
 #https://github.com/dreamingechoes/bootstrap_sb_admin_base_v2
