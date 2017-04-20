@@ -2,34 +2,18 @@
 
 <h1>Restaurants</h1>
    
-
-
-      <%= link_to 'New Restaurant', new_restaurant_path %>
-   <hr>
-
-
-      
-
 <div class="container-fluid">
   <!-- add extra container element for Masonry -->
-  <div class="grid">
-    <!-- add sizing element for columnWidth -->
-    <div class="grid-sizer col-xs-<%=[7].sample %>">
       <% @restaurants.each do |restaurant| %>
+      <div class="col-md-10 %>">
         <%= link_to restaurant_path(restaurant),:target => "_blank" do %>
-          <%= image_tag restaurant.avatar.url if restaurant.avatar? %>
-          <%#= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= image_tag restaurant.asset.url(:medium) if restaurant.asset? %>
         <% end %>
+
+      </div>
       <% end %>
-    </div>
-    <!-- items use Bootstrap .col- classes -->
-    <div class="grid-item col-xs-8">
-      <!-- wrap item content in its own element -->
-      <div class="grid-item-content">...</div>
-    </div>
-    <div class="grid-item col-xs-4">
-      <div class="grid-item-content">...</div>
-    </div>
-    ...
+</div>
+   
+    <!-- items u
   </div>
 </div>

@@ -36,7 +36,9 @@ gem 'carrierwave', '~> 1.0'
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', github: 'sferik/rails_admin'
 gem 'rails_admin_rollincode', '~> 1.0'
+gem 'cancancan'
 gem "devise"
+
 gem 'globalize', git: 'https://github.com/globalize/globalize'
 gem 'activemodel-serializers-xml'
 #gem 'rails_admin_globalize_field'

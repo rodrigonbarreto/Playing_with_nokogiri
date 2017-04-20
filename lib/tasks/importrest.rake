@@ -23,7 +23,8 @@ namespace :importrest do
       
 	    puts "#{row.attr('alt')}"
       a = Restaurant.find_or_initialize_by(name:  "#{row.attr('alt')}")
-      a.remote_avatar_url = "http:#{row.attr('data-original')}"
+      #a.remote_avatar_url = "http:#{row.attr('data-original')}"
+      a.asset_remote_url =  "http:#{row.attr('data-original')}"
       a.link = "https://www.thuisbezorgd.nl#{row1.first[1]}"
       a.save
       

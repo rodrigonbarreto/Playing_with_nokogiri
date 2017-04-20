@@ -6,4 +6,10 @@ class HomeController < ApplicationController
    	#@random_restaurant = Restaurant.where(chosen: true).sample
 	@random_restaurant = Restaurant.all.sample
   end
+  def choosed
+   	@total = Restaurant.all.count
+
+   	@lista = Restaurant.all
+	
+  end
 end

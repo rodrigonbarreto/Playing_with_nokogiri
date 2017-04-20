@@ -17,9 +17,9 @@
   </div>
 
   <div class="field">
-    <%= f.label :avatar %>
-     <%= image_tag @restaurant.avatar.url if @restaurant.avatar? %>
-    <%= f.file_field :avatar %>
+    <%= f.label :asset %>
+     <%= image_tag @restaurant.asset.url if @restaurant.asset? %>
+    <%= f.file_field :asset %>
   </div>
 
   <div class="field">

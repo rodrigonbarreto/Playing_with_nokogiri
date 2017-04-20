@@ -58,7 +58,11 @@
         <li>
             <%#= link_to destroy_admin_session_path, method: :delete do %>
                 <i class="fa fa-sign-out fa-fw"></i>
-                Sair
+              
+              <% if user_signed_in? %>
+                  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>   
+                  <%= current_user.email %> 
+              <% end %>
             <%# end %>
         </li>
     </ul>
@@ -74,6 +78,11 @@
         <li>
             <%= link_to root_path do %>
                 <i class="fa fa-dashboard fa-fw"></i> HOME 
+            <% end %>
+        </li>
+        <li>
+            <%= link_to home_choosed_path do %>
+                <i class="fa fa-dashboard fa-fw"></i> choseed 
             <% end %>
         </li>
         <li>
