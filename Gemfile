@@ -9,7 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -42,7 +42,7 @@ gem "devise"
 gem 'globalize', git: 'https://github.com/globalize/globalize'
 gem 'activemodel-serializers-xml'
 #gem 'rails_admin_globalize_field'
-gem 'pg'
+
 gem 'rails-i18n', '~> 5.0.0' # For 5.0.x
 gem 'rails_admin_globalize_field'
 gem "paperclip", "~> 5.0.0"
@@ -66,6 +66,8 @@ gem 'bootstrap_sb_admin_base_v2'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'sqlite3'
+  gem 'pg'
 end
 
 group :development do
