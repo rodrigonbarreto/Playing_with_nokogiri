@@ -68,6 +68,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'sqlite3'
   gem 'pg'
+  gem 'seed_dump'
 end
 
 group :development do
