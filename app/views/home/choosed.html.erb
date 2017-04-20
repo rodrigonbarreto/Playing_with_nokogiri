@@ -1,7 +1,17 @@
 <h1>Chossed</h1>
 
+<p id="notice"><%= notice %></p>
 
-<%#= debug %>
-<h2> OLA</h2>
+<h1>Restaurants</h1>
+   
+<div class="container-fluid">
+  <!-- add extra container element for Masonry -->
+      <% @lista.each do |restaurant| %>
+      <div class="col-md-10 %>">
+        <%= link_to restaurant_path(restaurant),:target => "_blank" do %>
+        <%= image_tag restaurant.asset.url(:medium) if restaurant.asset? %>
+        <% end %>
 
-<%= debug @lista %>
+      </div>
+      <% end %>
+</div>
