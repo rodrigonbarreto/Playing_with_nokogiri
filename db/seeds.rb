@@ -1,6 +1,6 @@
 User.create!([
-  {email: "rodrigo@masterchef.com", encrypted_password: "$2a$11$1xDRvMz0k7BI9YiMjOaIFeVIvmklVnfVkGA4fSrikMqN6W2gKKwLS", kind: "normal", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 3, current_sign_in_at: "2017-04-20 21:55:59", last_sign_in_at: "2017-04-20 21:43:36", current_sign_in_ip: "10.0.2.2", last_sign_in_ip: "10.0.2.2"},
-  {email: "parnas@masterchef.com", encrypted_password: "$2a$11$kVKOV5xRi16L7uy2cV4es.gwkqw6Wl.bwxFXg9WWiC1aIqlypA0Ra", kind: "admin", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 5, current_sign_in_at: "2017-04-20 21:57:33", last_sign_in_at: "2017-04-20 21:54:35", current_sign_in_ip: "10.0.2.2", last_sign_in_ip: "10.0.2.2"}
+  {email: "rodrigo@masterchef.com", password: "123123", kind: "admin"},
+  {email: "parnas@masterchef.com",  password: "123123", kind: "admin"}
 ])
 Restaurant.create!([
   {name: "Valentino's food@night - Snacks - Panini's - Broodjes", link: "https://www.thuisbezorgd.nl/valentinos-foodnight", chosen: false, asset_file_name: "logo_465x320.png", asset_content_type: "image/png", asset_file_size: 5878, asset_updated_at: "2017-04-20 22:29:20", description: nil},
