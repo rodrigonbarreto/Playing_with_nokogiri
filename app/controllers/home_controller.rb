@@ -9,7 +9,7 @@ class HomeController < ApplicationController
   def choosed
    	@total = Restaurant.all.count
 
-   	@lista = Restaurant.all
+   	@lista = Restaurant.where(chosen: true)
 	
   end
 end
