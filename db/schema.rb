@@ -12,15 +12,12 @@
 
 ActiveRecord::Schema.define(version: 20170420195558) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "comments", force: :cascade do |t|
     t.text     "description"
     t.integer  "restaurant_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.index ["restaurant_id"], name: "index_comments_on_restaurant_id", using: :btree
+    t.index ["restaurant_id"], name: "index_comments_on_restaurant_id"
   end
 
   create_table "galleries", force: :cascade do |t|
@@ -31,7 +28,7 @@ ActiveRecord::Schema.define(version: 20170420195558) do
     t.datetime "asset_updated_at"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.index ["restaurant_id"], name: "index_galleries_on_restaurant_id", using: :btree
+    t.index ["restaurant_id"], name: "index_galleries_on_restaurant_id"
   end
 
   create_table "restaurant_translations", force: :cascade do |t|
@@ -40,8 +37,8 @@ ActiveRecord::Schema.define(version: 20170420195558) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.text     "description"
-    t.index ["locale"], name: "index_restaurant_translations_on_locale", using: :btree
-    t.index ["restaurant_id"], name: "index_restaurant_translations_on_restaurant_id", using: :btree
+    t.index ["locale"], name: "index_restaurant_translations_on_locale"
+    t.index ["restaurant_id"], name: "index_restaurant_translations_on_restaurant_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -70,10 +67,8 @@ ActiveRecord::Schema.define(version: 20170420195558) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "comments", "restaurants"
-  add_foreign_key "galleries", "restaurants"
 end

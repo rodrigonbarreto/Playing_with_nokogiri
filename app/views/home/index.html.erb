@@ -2,7 +2,14 @@
 
 
 <%#= debug %>
-<h2> <%= link_to 'What will I eat today? ...', @random_restaurant %></h2>
+  <% if user_signed_in? && check_admin(current_user) %>
+		<h2> <%= link_to 'What will I eat today? ...', @random_restaurant %></h2>
+	<% else %>	
+	<h2> What will I eat today? </h2>
+  <% end %>
+
+
+
 
 <%#= debug @random_restaurant %>
 

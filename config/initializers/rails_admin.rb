@@ -3,7 +3,8 @@ RailsAdmin.config do |config|
   ### Popular gems integration
   #config.included_models = ['Restaurant','Restaurant::Translation']
 
-  config.included_models = ['Restaurant','Restaurant::Translation','Gallery', 'Comment']
+  #config.included_models = ['Restaurant','Restaurant::Translation','Gallery', 'Comment']
+  config.included_models = ['Restaurant','Restaurant::Translation']
 
 
   ## == Devise ==
@@ -12,8 +13,30 @@ RailsAdmin.config do |config|
   end
   config.current_user_method(&:current_user)
 
+  config.main_app_name = ["The Secret Order", ""]
+
   ## == Cancan ==
-   config.authorize_with :cancan
+  config.authorize_with :cancan
+
+  # config.model Restaurant do
+  #   navigation_icon 'fa fa-money'
+  #   configure :translations, :globalize_tabs
+  #   create do
+  #     field  :name
+  #     field  :link
+  #     field  :chosen
+  #     field  :asset
+  #     field  :description
+  #   end
+  #   edit do
+  #     field  :name
+  #     field  :link
+  #     field  :chosen
+  #     field  :asset
+  #     field  :description
+  #   end
+  # end
+
 
   ## == Pundit ==
   # config.authorize_with :pundit

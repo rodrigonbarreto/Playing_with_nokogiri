@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 
 	def set_session_location_ative
 		if !params[:locale].blank?
-		  puts "AAAAAAAA #{params[:locale]}  AAAAAA"
+		  #puts "AAAAAAAA #{params[:locale]}  AAAAAA"
 		  session[:current_locale_session] = params[:locale]
 		  I18n.locale = session[:current_locale_session]
 		end
