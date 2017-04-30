@@ -4,7 +4,7 @@ RailsAdmin.config do |config|
   #config.included_models = ['Restaurant','Restaurant::Translation']
 
   #config.included_models = ['Restaurant','Restaurant::Translation','Gallery', 'Comment']
-  config.included_models = ['Restaurant','Restaurant::Translation']
+  config.included_models = ['Restaurant','Restaurant::Translation', 'User']
 
 
   ## == Devise ==
