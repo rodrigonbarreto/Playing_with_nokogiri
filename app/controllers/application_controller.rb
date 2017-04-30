@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :set_locale, :set_session_location_ative
+  before_action  :set_session_location_ative
   
 
 
@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
 		if !params[:locale].blank?
 		  #puts "AAAAAAAA #{params[:locale]}  AAAAAA"
 		  session[:current_locale_session] = params[:locale]
-		  I18n.locale = session[:current_locale_session]
+		  set_locale
 		end
 	end
 end

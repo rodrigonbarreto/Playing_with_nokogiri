@@ -50,7 +50,7 @@ gem "paperclip", "~> 5.0.0"
 
 
 group :test, :production do
-    gem 'pg'
+   # gem 'pg'
     gem 'rails_12factor'
 
 end
@@ -67,7 +67,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'sqlite3'
-  gem 'pg'
+  #gem 'pg'
   gem 'seed_dump'
 end
 

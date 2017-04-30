@@ -1,6 +1,6 @@
 <h1>random chosen</h1>
 
-<p id="notice"><%= notice %></p>
+
 
 <h1>Restaurants</h1>
    <%#= debug @lista %>
@@ -8,11 +8,11 @@
   <!-- add extra container element for Masonry -->
       <% @lista.each do |restaurant| %>
       <div class="col-md-10 %>">
-      <%= restaurant.name %>
+      
         <%= link_to restaurant_path(restaurant),:target => "_blank" do %>
         <%= image_tag restaurant.asset.url(:medium) %>
         <% end %>
-
+      <%= restaurant.name %>
       </div>
       <% end %>
 </div>
