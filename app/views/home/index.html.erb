@@ -1,29 +1,34 @@
-    <!-- Intro Header -->
-    <header class="intro">
-    	<div class="intro-body">
-    		<div class="container">
-    			<div class="row">
-    				<div class="col-md-8 col-md-offset-2">
 
+<!-- Intro Header -->
+<header class="intro">
+	<div class="intro-body">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<%#= debug %>
+					<% if user_signed_in? && check_admin(current_user) %>
+                        <%= link_to @random_restaurant, :class => "secret__link" do %>
+        					<h1 class="brand-heading"> What will I eat today? </h1>
+                            <p class="intro-text"><%= sentence %></p>
+                        
+                            <span class="btn btn-primary btn-lg">
+                                <i class="fa fa-cutlery"></i> Raffle now!
+                            </span>
+                        <% end %>
+					<% else %>	
+						<h1 class="brand-heading"> What will I eat today? </h1>
+						<p class="intro-text">Login to find out!</p>
+					<% end %>
+					<%#= debug @random_restaurant %>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
 
-    					<%#= debug %>
-    					<% if user_signed_in? && check_admin(current_user) %>
-	    					<h1 class="brand-heading"> <%= link_to 'What will I eat today? ...', @random_restaurant %></h1>
-	    					<%= link_to @random_restaurant, :class => "btn btn-circle page-scroll" do %>
-	    					<i class="fa fa-question animated"></i>
-	    					<% end %>
-    					<% else %>	
-    						<h1 class="brand-heading"> What will I eat today? </h1>
-    						<p class="intro-text">Login to find out!</p>
-    					<% end %>
-
-    					<%#= debug @random_restaurant %>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
-    </header>
-
-
-
-
+<script type="text/javascript">
+     $('.secret__link').each(function(){  
+         $(this).attr('onclick','window.location.href="'+$(this).attr('href')+'"');
+         $(this).attr('href','');
+     });
+</script>

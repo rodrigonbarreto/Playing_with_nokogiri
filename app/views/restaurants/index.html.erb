@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Restaurants</h1>
-   
-<div class="container-fluid">
-  <!-- add extra container element for Masonry -->
+<!-- Chosen Section -->
+<section class="content-section">
+  <div class="signup-section">
+    <div class="container">
+      <h2>All Restaurants</h2>
+    <ul class="list-unstyled">
       <% @restaurants.each do |restaurant| %>
-      <div class="col-md-10 %>">
+      <li class="col-md-3">
         <%= link_to restaurant_path(restaurant),:target => "_blank" do %>
-        <%= image_tag restaurant.asset.url(:medium) if restaurant.asset? %>
+        <%= image_tag restaurant.asset.url(:medium) %>
         <% end %>
-
-      </div>
+      </li>
       <% end %>
-</div>
-   
-    <!-- items u
+      </ul>
+    </div>
   </div>
-</div>
+</section>

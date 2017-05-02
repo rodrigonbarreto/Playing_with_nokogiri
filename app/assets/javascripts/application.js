@@ -16,5 +16,7 @@
 //= require jquery_ujs
 //= require bootstrap_sb_admin_base_v2
 //= require startbootstrap/grayscale
+//= require BlockRevealers/anime.min.js
+//= require BlockRevealers/main.js
 //= require turbolinks
 //= require_tree .

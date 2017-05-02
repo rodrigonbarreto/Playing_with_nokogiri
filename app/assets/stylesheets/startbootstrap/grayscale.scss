@@ -1,10 +1,10 @@
-@import "variables";
+@import "../variables";
 @import "mixins";
 
 body {
     width: 100%;
     height: 100%;
-    font-family: "Lora","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
     color: white;
     background-color: $primary;
 }
@@ -129,7 +129,7 @@ a {
     padding: 100px 0;
     text-align: center;
     color: white;
-    background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
+    background: image-url("/img/intro-bg.jpg") no-repeat bottom center scroll;
     background-color: $primary;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -140,9 +140,12 @@ a {
         vertical-align: middle;
         .brand-heading {
             font-size: 40px;
+            color: $white;
         }
         .intro-text {
             font-size: 18px;
+            color: $white;
+
         }
     }
     @media(min-width:768px) {
@@ -259,8 +262,8 @@ a {
         padding-top: 250px;
     }
 
-    .download-section {
-        padding: 100px 0;
+    .show-section {
+        padding-top: 150px;
     }
 
     #map {
@@ -289,6 +292,32 @@ a {
         outline: none;
         color: $primary;
         background-color: $secondary;
+    }
+}
+.btn-inverse {
+    border: 1px solid $black;
+    color: $primary;
+    background-color: $black;
+    &:hover,
+    &:focus {
+        border: 1px solid $secondary;
+        outline: none;
+        color: $secondary;
+        background-color: transparent;
+
+    }
+}
+.btn-primary {
+    border: 1px solid $primary;
+    color: $white;
+    background-color: $primary;
+    &:hover,
+    &:focus {
+        border: 1px solid darken($primary, 10%);
+        outline: none;
+        color: $white;
+        background-color: darken($primary, 10%);
+
     }
 }
 

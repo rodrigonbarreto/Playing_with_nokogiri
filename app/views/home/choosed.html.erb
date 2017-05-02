@@ -1,18 +1,17 @@
-<h1>random chosen</h1>
-
-
-
-<h1>Restaurants</h1>
-   <%#= debug @lista %>
-<div class="container-fluid">
-  <!-- add extra container element for Masonry -->
+<!-- Chosen Section -->
+<section class="content-section">
+  <div class="signup-section">
+    <div class="container">
+      <h2>You've tried</h2>
+    <ul class="list-unstyled">
       <% @lista.each do |restaurant| %>
-      <div class="col-md-10 %>">
-      
+      <li class="col-md-3">
         <%= link_to restaurant_path(restaurant),:target => "_blank" do %>
         <%= image_tag restaurant.asset.url(:medium) %>
         <% end %>
-      <%= restaurant.name %>
-      </div>
+      </li>
       <% end %>
-</div>
+      </ul>
+    </div>
+  </div>
+</section>

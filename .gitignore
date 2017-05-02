@@ -23,4 +23,4 @@ public/uploads/tmp/*
 .byebug_history
 
 # Scss
-._*
+.*

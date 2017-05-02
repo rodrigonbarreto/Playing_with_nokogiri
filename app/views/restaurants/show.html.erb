@@ -1,30 +1,86 @@
-<p id="notice"><%= notice %></p>
+<div class="loading"></div>
 
+<section class="show-section">
+	<div class="content">
+		<div id="logo" class="content__image-wrap content__image--right">
+			<%= image_tag @restaurant.asset.url, :class => "content__image" if @restaurant.asset? %>
+		</div>
+		<div class="clearfix"></div>
+		<h2 class="content__title content__title--right">
+			<%= link_to @restaurant.link, :target => "_blank", :class => "content__title__link" do %>
+			<div id="title" class="content__title__inner"><%= h_rest_name["title"] %></div>
+			<div id="slogan" class="content__title__inner content__title__inner--offset-1"><%= h_rest_name["slogan"] %></div>
+			<% end %>
+		</h2>
 
-<p>
-  <strong>Description:</strong>
-  <%= @restaurant.description %>
-</p>
+		<div class="content__actions text-right">
+			<%= link_to root_path, :class => "btn btn-default btn-lg" do %>
+				<i class="fa fa-frown-o"></i> I'd rather starve 
+			<% end %>
 
-<p>
-  <strong>Avatar:</strong>
-  <%= image_tag @restaurant.asset.url if @restaurant.asset? %>
-</p>
+			<%= link_to @restaurant.link, :target => "_blank", :class => "btn btn-inverse btn-lg" do %>
+				<i class="fa fa-cutlery"></i> Order
+			<% end %>
+		</div>
 
-<% @restaurant.galleries.each do |gallery| %>
-      <%= image_tag gallery.asset.url if gallery.asset? %>
- <% end %>
+	</div>
+</section>
 
-<br>
-<a href="<%=@restaurant.link%>" target="_blank" ><%=@restaurant.link %> </a>
-<p>
-  <strong>chosen:</strong>
-  <%= @restaurant.chosen %>
-</p>
+<script>
+	(function() {
+			// Fake loading.
+			setTimeout(init, 1000);
 
-<p>
-  <strong>Name:</strong>
-  <%= @restaurant.name %>
-</p>
+			function init() {
+				
+				document.querySelector('.loading').remove();
+				
+				var revTitle = new RevealFx(document.querySelector('#title'), {
+					revealSettings : {
+						bgcolor: '#333',
+						onCover: function(contentEl, revealerEl) {
+							contentEl.style.opacity = 1;
+						}
+					}
+				});
+				revTitle.reveal();
 
-<%= link_to 'Home', root_path %>
+				var revSlogan = new RevealFx(document.querySelector('#slogan'), {
+					revealSettings : {
+						bgcolor: '#333',
+						delay: 250,
+						onCover: function(contentEl, revealerEl) {
+							contentEl.style.opacity = 1;
+						}
+					}
+				});
+				revSlogan.reveal();
+
+				var revLogo = new RevealFx(document.querySelector('#logo'), {
+						revealSettings : {
+							bgcolor: '#FFFFFF',
+							delay: 300,
+							direction: 'rl',
+							onCover: function(contentEl, revealerEl) {
+								contentEl.style.opacity = 1;
+							}
+						}
+					});
+				revLogo.reveal();
+
+				var buttons = new RevealFx(document.querySelector('.content__actions'), {
+					revealSettings : {
+						bgcolor: '#FFFFFF',
+						delay: 300,
+						direction: 'rl',
+						onCover: function(contentEl, revealerEl) {
+							contentEl.style.opacity = 1;
+						}
+					}
+				});
+				buttons.reveal();
+
+				
+			}
+		})();
+	</script>
