@@ -10,13 +10,13 @@
           <p class="text-muted">Check out what you can get one of these days!</p>
         </div>
       </div>
-      <span class="toggler active" data-toggle="grid"><span class="fa fa-th"></span></span>
-      <span class="toggler" data-toggle="list"><span class="fa fa-bars"></span></span>
+      <span class="toggler active" data-toggle="4"><span class="fa fa-th"></span></span>
+      <span class="toggler" data-toggle="2"><span class="fa fa-bars"></span></span>
       <div class="restaurants__wrapper">
         <ul class="restaurant--grid" data-column="4">
           <% @restaurants.each do |restaurant| %>
            <li class="restaurant--column">
-                <%= link_to restaurant_path(restaurant), :class => "restaurant__info" do %>
+                <%= link_to restaurant_path(restaurant), remote: true, :class => "restaurant__info" do %>
                   <div class="restaurant__info__image"><%= image_tag restaurant.asset.url(:medium) %></div>
                   <div class="restaurant__info__title"><%= h_rest_name(restaurant)["title"] %></div>
                   <div class="restaurant__info__slogan"><%=h_rest_name(restaurant)["slogan"] %></div>
@@ -28,19 +28,24 @@
     </div>
   </div>
 </section>
-
-
+  <div class="cd-quick-view"></div>
 <script type="text/javascript">
   
-// document.getElementsByClassName("toggler").onclick = function(){toggleClass(this)};
+window.onload = function() {
+    var togglers = document.getElementsByClassName('toggler');
+    for(var i = 0; i < togglers.length; i++) {
+         togglers[i].addEventListener('click', function() {
+          if(this.classList.contains('active')) return;
+          var $this = this,
+              $other = document.querySelector('.toggler.active'),
+              thisMode = $this.getAttribute('data-toggle');
+              document.querySelector('.restaurant--grid').setAttribute('data-column', thisMode);
+          
+          $other.classList.remove('active');
+          $this.classList.add('active');
+        });
+    }
+}
 
-// function toggleClass(e) {
-//   console.log(e)
-//   // if(e.classList.contains("active")) {
-//   //       e.classList.remove("active");
-//   //   } else {
-//   //       e.classList.add("active");
-//   //   }
-// }
   
 </script>
