@@ -8,8 +8,8 @@
 		<div class="clearfix"></div>
 		<h2 class="content__title content__title--right">
 			<%= link_to @restaurant.link, :target => "_blank", :class => "content__title__link" do %>
-			<div id="title" class="content__title__inner"><%= h_rest_name["title"] %></div>
-			<div id="slogan" class="content__title__inner content__title__inner--offset-1"><%= h_rest_name["slogan"] %></div>
+			<div id="title" class="content__title__inner"><%= h_rest_name(@restaurant)["title"] %></div>
+			<div id="slogan" class="content__title__inner content__title__inner--offset-1"><%= h_rest_name(@restaurant)["slogan"] %></div>
 			<% end %>
 		</h2>
 

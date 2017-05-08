@@ -1,0 +1,60 @@
+//  Mixins
+
+@mixin transition($transition...) {
+  -webkit-transition: $transition;
+  	  -ms-transition: $transition; // IE9 only
+       -o-transition: $transition;
+          transition: $transition;
+}
+
+@mixin animation($animation...) {
+  -webkit-animation: $animation;
+      -ms-animation: $animation; // IE9 only
+       -o-animation: $animation;
+          animation: $animation;
+}
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+      -ms-transform: $transform; // IE9 only
+       -o-transform: $transform;
+          transform: $transform;
+}
+
+@mixin cd-translate($from--opacity, $from--transform, $to--opacity, $to--transform){
+	@-webkit-keyframes cd-translate {
+	  0% {
+	    opacity: $from--opacity; 
+	    @include transform(translateY($from--transform));
+	  }
+
+	  100% {
+	    opacity: $to--opacity; 
+	    @include transform(translateY($to--transform));
+	  }
+	}
+
+	@-moz-keyframes cd-translate  {
+	  0% {
+	    opacity: $from--opacity; 
+	    @include transform(translateY($from--transform));
+	  }
+
+	  100% {
+	    opacity: $to--opacity; 
+	    @include transform(translateY($to--transform));
+	  }
+	}
+
+	@-moz-keyframes cd-translate  {
+	  0% {
+	    opacity: $from--opacity; 
+	    @include transform(translateY($from--transform));
+	  }
+
+	  100% {
+	    opacity: $to--opacity; 
+	    @include transform(translateY($to--transform));
+	  }
+	}
+}

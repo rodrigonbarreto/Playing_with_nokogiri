@@ -1,17 +1,24 @@
 <!-- Chosen Section -->
 <section class="content-section">
-  <div class="signup-section">
+<div class="chosen-section">
     <div class="container">
       <h2>You've tried</h2>
-    <ul class="list-unstyled">
-      <% @lista.each do |restaurant| %>
-      <li class="col-md-3">
-        <%= link_to restaurant_path(restaurant),:target => "_blank" do %>
-        <%= image_tag restaurant.asset.url(:medium) %>
-        <% end %>
-      </li>
-      <% end %>
-      </ul>
+
+      <div class="restaurants__wrapper">
+        <ul class="restaurants__wrapper__list restaurants__wrapper__list--slide">
+          <% @lista.each do |restaurant| %>
+          <li>
+            <%= link_to restaurant_path(restaurant),:target => "_blank" do %>
+            <%= image_tag restaurant.asset.url(:medium) %>
+            <!-- <div class="restaurants__wrapper__info">
+              <h2>Project 1</h2>
+              <p>Lorem ipsum dolor sit amet.</p>
+            </div> -->
+            <% end %>
+          </li>
+          <% end %>
+        </ul>
+      </div> 
     </div>
   </div>
 </section>

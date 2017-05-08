@@ -1,19 +1,46 @@
 <p id="notice"><%= notice %></p>
 
-<!-- Chosen Section -->
+<!-- All Restaurants Section -->
 <section class="content-section">
-  <div class="signup-section">
+  <div class="all-section">
     <div class="container">
-      <h2>All Restaurants</h2>
-    <ul class="list-unstyled">
-      <% @restaurants.each do |restaurant| %>
-      <li class="col-md-3">
-        <%= link_to restaurant_path(restaurant),:target => "_blank" do %>
-        <%= image_tag restaurant.asset.url(:medium) %>
-        <% end %>
-      </li>
-      <% end %>
-      </ul>
+      <div class="col-lg-12 text-center">
+        <div class="section-heading">
+          <h2>Limited Options, Unlimited Fun</h2>
+          <p class="text-muted">Check out what you can get one of these days!</p>
+        </div>
+      </div>
+      <span class="toggler active" data-toggle="grid"><span class="fa fa-th"></span></span>
+      <span class="toggler" data-toggle="list"><span class="fa fa-bars"></span></span>
+      <div class="restaurants__wrapper">
+        <ul class="restaurant--grid" data-column="4">
+          <% @restaurants.each do |restaurant| %>
+           <li class="restaurant--column">
+                <%= link_to restaurant_path(restaurant), :class => "restaurant__info" do %>
+                  <div class="restaurant__info__image"><%= image_tag restaurant.asset.url(:medium) %></div>
+                  <div class="restaurant__info__title"><%= h_rest_name(restaurant)["title"] %></div>
+                  <div class="restaurant__info__slogan"><%=h_rest_name(restaurant)["slogan"] %></div>
+                <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div> 
     </div>
   </div>
 </section>
+
+
+<script type="text/javascript">
+  
+// document.getElementsByClassName("toggler").onclick = function(){toggleClass(this)};
+
+// function toggleClass(e) {
+//   console.log(e)
+//   // if(e.classList.contains("active")) {
+//   //       e.classList.remove("active");
+//   //   } else {
+//   //       e.classList.add("active");
+//   //   }
+// }
+  
+</script>

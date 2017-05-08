@@ -1,10 +1,10 @@
 @import "../variables";
-@import "mixins";
+@import "../mixins";
 
 body {
     width: 100%;
     height: 100%;
-    font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: $font-base;
     color: white;
     background-color: $primary;
 }
@@ -22,7 +22,7 @@ h5,
 h6 {
     margin: 0 0 35px;
     text-transform: uppercase;
-    font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: $font-base;
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -58,7 +58,7 @@ a {
     margin-bottom: 0;
     border-bottom: 1px solid rgba(white, 0.3);
     text-transform: uppercase;
-    font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: $font-base;
     background-color: $primary;
     .navbar-toggle {
         padding: 4px 6px;
@@ -259,7 +259,7 @@ a {
 
 @media(min-width:767px) {
     .content-section {
-        padding-top: 250px;
+        padding-top: 150px;
     }
 
     .show-section {
@@ -274,7 +274,7 @@ a {
 
 .btn {
     text-transform: uppercase;
-    font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: $font-base;
     font-weight: 400;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;

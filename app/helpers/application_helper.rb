@@ -18,8 +18,8 @@ module ApplicationHelper
     "Whet your appetite"].sample
 	end
 
-	def h_rest_name
-		title, slogan = @restaurant.name.split(/-/)
+	def h_rest_name(restaurant)
+		title, slogan = restaurant.name.split(/-/)
 		{"title" => title, "slogan" => slogan}
 	end
 end
