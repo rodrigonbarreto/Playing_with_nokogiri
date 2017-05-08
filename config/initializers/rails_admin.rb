@@ -6,6 +6,19 @@ RailsAdmin.config do |config|
   #config.included_models = ['Restaurant','Restaurant::Translation','Gallery', 'Comment']
   config.included_models = ['Restaurant','Restaurant::Translation', 'User']
 
+  config.model 'Restaurant' do
+  configure :translations, :globalize_tabs
+  end
+
+  config.model 'Restaurant::Translation' do
+  visible false
+  configure :locale, :hidden do
+  help ''
+  end
+  include_fields :locale, :description
+  end
+
+
 
   ## == Devise ==
   config.authenticate_with do
@@ -50,7 +63,7 @@ RailsAdmin.config do |config|
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar = true
 
-  
+
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
