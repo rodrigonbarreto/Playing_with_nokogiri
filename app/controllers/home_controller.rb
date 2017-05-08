@@ -8,8 +8,12 @@ class HomeController < ApplicationController
   end
   def choosed
    	@total = Restaurant.all.count
-
    	@lista = Restaurant.where(chosen: true)
-	
+  end
+
+  # GET /randomselect/1
+  # GET /randomselect/1.json
+  def randomselect
+    @restaurant = Restaurant.find(params[:id])
   end
 end

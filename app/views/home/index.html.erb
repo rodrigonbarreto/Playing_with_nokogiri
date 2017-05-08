@@ -7,15 +7,15 @@
 				<div class="col-md-8 col-md-offset-2">
 					<%#= debug %>
 					<% if user_signed_in? && check_admin(current_user) %>
-                        <%= link_to @random_restaurant, :class => "secret__link" do %>
+                	<%= link_to randomselect_path(@random_restaurant), :class => "secret__link" do %>
         					<h1 class="brand-heading"> What will I eat today? </h1>
                             <p class="intro-text"><%= sentence %></p>
-                        
+
                             <span class="btn btn-primary btn-lg">
                                 <i class="fa fa-cutlery"></i> Raffle now!
                             </span>
                         <% end %>
-					<% else %>	
+					<% else %>
 						<h1 class="brand-heading"> What will I eat today? </h1>
 						<p class="intro-text">Login to find out!</p>
 					<% end %>
@@ -27,7 +27,7 @@
 </header>
 
 <script type="text/javascript">
-     $('.secret__link').each(function(){  
+     $('.secret__link').each(function(){
          $(this).attr('onclick','window.location.href="'+$(this).attr('href')+'"');
          $(this).attr('href','');
      });
