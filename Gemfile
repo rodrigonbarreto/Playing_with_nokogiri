@@ -38,6 +38,9 @@ gem 'rails_admin', github: 'sferik/rails_admin'
 gem 'rails_admin_rollincode', '~> 1.0'
 gem 'cancancan'
 gem "devise"
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 
 gem 'globalize', git: 'https://github.com/globalize/globalize'
 gem 'activemodel-serializers-xml'
@@ -76,7 +79,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
   gem  'pry'
-  gem  'nokogiri' 
+  gem  'nokogiri'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'

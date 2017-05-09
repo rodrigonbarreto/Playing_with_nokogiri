@@ -40,26 +40,29 @@
 	  				</li>
 	  				<li>
 	  					<%= link_to home_choosed_path, :class => "page-scroll" do %>
-	  					Chosen 
+	  					Chosen
 	  					<% end %>
 	  				</li>
 	  				<li>
 	  					<%= link_to restaurants_path, :class => "page-scroll" do %>
-	  					Restaurants 
+	  					Restaurants
 	  					<% end %>
 	  				</li>
 
 	  				<% if user_signed_in? %>
+            <% if current_user.image.present? %>
+                <%= image_tag(current_user.image, size: "40") %>
+            <% end %>
 	  				<li class="dropdown">
 	  					<a class="dropdown-toggle page-scroll" data-toggle="dropdown" href="#">
-	  					<%= current_user.email %>
-	  						<i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i> 
+	  					<%= current_user.name %>
+	  						<i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
 	  					</a>
 	  					<ul class="dropdown-menu dropdown-user">
 	  						<li>
 	  							<i class="fa fa-sign-out fa-fw"></i>
-	  							<%= link_to('Logout', destroy_user_session_path, :method => :delete) %> 
-	  							<%= link_to('Edit Account', edit_user_registration_path) %> 
+	  							<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+	  							<%= link_to('Edit Account', edit_user_registration_path) %>
 	  						</li>
 	  					</ul>
 					</li>
