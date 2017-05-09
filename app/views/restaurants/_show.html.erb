@@ -13,7 +13,7 @@
 	<div class="cd-item-info">
 		<h2><%= h_rest_name(@restaurant)["title"] %> <br>
 		<small><%= h_rest_name(@restaurant)["slogan"] %></small></h2>
-		<p><%= @restaurant.description %></p>
+		<p><%= t(@restaurant.description) %></p>
  
 		<ul class="cd-item-action">
 			<!-- <li><button class="add-to-cart">Add to cart</button></li>					 -->
