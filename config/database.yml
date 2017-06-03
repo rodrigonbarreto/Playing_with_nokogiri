@@ -86,4 +86,4 @@ production:
   <<: *default
   database: secretorder_prod
   username: secretorder
-  password: <%= ENV['secretorder'] %>
+  password: <%= ENV['SECRETORDER'] %>
