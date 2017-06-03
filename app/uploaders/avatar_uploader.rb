@@ -1,4 +1,4 @@
-class PhotoUploader < CarrierWave::Uploader::Base
+class AvatarUploader < CarrierWave::Uploader::Base
 if Rails.env.production?
   include Cloudinary::CarrierWave
   process :convert => 'png'
