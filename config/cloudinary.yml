@@ -8,8 +8,8 @@ production:
   cloud_name: dcikw6bzg
   api_key: '369396812576553'
   api_secret: 0mgk9jOxgnAxHm3a1iB95qDAXxs
-  enhance_image_tag: true
-  static_image_support: true
+  # enhance_image_tag: true
+  # static_image_support: true
 test:
   cloud_name: dcikw6bzg
   api_key: '369396812576553'
