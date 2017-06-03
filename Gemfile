@@ -59,7 +59,6 @@ gem "paperclip", "~> 5.0.0"
 group :test, :production do
     gem 'pg'
     gem 'rails_12factor'
-
 end
 
 
