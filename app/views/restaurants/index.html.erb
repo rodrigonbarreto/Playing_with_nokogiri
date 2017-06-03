@@ -17,20 +17,20 @@
           <% @restaurants.each do |restaurant| %>
            <li class="restaurant--column">
                 <%= link_to restaurant_path(restaurant), remote: true, :class => "restaurant__info" do %>
-                  <div class="restaurant__info__image"><%= image_tag restaurant.asset.url(:medium) %></div>
+                  <div class="restaurant__info__image"><%= image_tag restaurant.avatar.medium.url %></div>
                   <div class="restaurant__info__title"><%= h_rest_name(restaurant)["title"] %></div>
                   <div class="restaurant__info__slogan"><%=h_rest_name(restaurant)["slogan"] %></div>
                 <% end %>
             </li>
           <% end %>
         </ul>
-      </div> 
+      </div>
     </div>
   </div>
 </section>
   <div class="cd-quick-view"></div>
 <script type="text/javascript">
-  
+
 window.onload = function() {
     var togglers = document.getElementsByClassName('toggler');
     for(var i = 0; i < togglers.length; i++) {
@@ -40,12 +40,12 @@ window.onload = function() {
               $other = document.querySelector('.toggler.active'),
               thisMode = $this.getAttribute('data-toggle');
               document.querySelector('.restaurant--grid').setAttribute('data-column', thisMode);
-          
+
           $other.classList.remove('active');
           $this.classList.add('active');
         });
     }
 }
 
-  
+
 </script>

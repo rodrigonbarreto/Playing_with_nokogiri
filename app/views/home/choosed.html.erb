@@ -16,15 +16,14 @@
           <% @lista.each do |restaurant| %>
            <li class="restaurant--column">
                 <%= link_to restaurant_path(restaurant), :class => "restaurant__info" do %>
-                  <div class="restaurant__info__image"><%= image_tag restaurant.asset.url(:medium) %></div>
+                  <div class="restaurant__info__image"><%= image_tag restaurant.avatar.url(:medium) %></div>
                   <div class="restaurant__info__title"><%= h_rest_name(restaurant)["title"] %></div>
                   <div class="restaurant__info__slogan"><%=h_rest_name(restaurant)["slogan"] %></div>
                 <% end %>
             </li>
           <% end %>
         </ul>
-      </div> 
+      </div>
     </div>
   </div>
 </section>
-

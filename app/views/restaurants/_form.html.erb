@@ -18,8 +18,8 @@
 
   <div class="field">
     <%= f.label :asset %>
-     <%= image_tag @restaurant.asset.url if @restaurant.asset? %>
-    <%= f.file_field :asset %>
+     <%= image_tag @restaurant.avatar.url if @restaurant.avatar? %>
+    <%= f.file_field :avatar %>
   </div>
 
   <div class="field">

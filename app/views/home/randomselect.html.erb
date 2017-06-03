@@ -3,7 +3,7 @@
 <section class="show-section">
 	<div class="content">
 		<div id="logo" class="content__image-wrap content__image--right">
-			<%= image_tag @restaurant.asset.url, :class => "content__image" if @restaurant.asset? %>
+			<%= image_tag @restaurant.avatar.url, :class => "content__image" if @restaurant.avatar? %>
 		</div>
 		<div class="clearfix"></div>
 		<h2 class="content__title content__title--right">

@@ -1,23 +1,23 @@
 
 	<div class="cd-slider-wrapper">
 		<ul class="cd-slider">
-			<li class="selected"><%= image_tag @restaurant.asset.url, :class => "content__image" if @restaurant.asset? %></li>
+			<li class="selected"><%= image_tag @restaurant.avatar.url, :class => "content__image" if @restaurant.avatar? %></li>
 		</ul>
- 
+
 		<!-- <ul class="cd-slider-navigation">
 			<li><a class="cd-next" href="#0">Prev</a></li>
 			<li><a class="cd-prev" href="#0">Next</a></li>
 		</ul>  -->
-	</div> 
- 
+	</div>
+
 	<div class="cd-item-info">
 		<h2><%= h_rest_name(@restaurant)["title"] %> <br>
 		<small><%= h_rest_name(@restaurant)["slogan"] %></small></h2>
 		<p><%= t(@restaurant.description) %></p>
- 
+
 		<ul class="cd-item-action">
 			<!-- <li><button class="add-to-cart">Add to cart</button></li>					 -->
 			<!-- <li><a href="#0">Learn more</a></li>	 -->
-		</ul> 
-	</div> 
+		</ul>
+	</div>
 	<span class="cd-close">Close</span>

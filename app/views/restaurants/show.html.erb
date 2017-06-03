@@ -2,12 +2,12 @@
   <div class="show-section">
     <div class="container">
       <div class="col-lg-12 text-center">
-      <%= image_tag @restaurant.asset.url, :class => "content__image" if @restaurant.asset? %>
+      <%= image_tag @restaurant.avatar.url, :class => "content__image" if @restaurant.avatar? %>
         <h2><%= h_rest_name(@restaurant)["title"] %> <br>
 		<small><%= h_rest_name(@restaurant)["slogan"] %></small></h2>
 		<p><%= @restaurant.description %></p>
- 
-      </div> 
+
+      </div>
     </div>
   </div>
 </section>

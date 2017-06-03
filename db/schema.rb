@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20170508213754) do
     t.boolean  "chosen",             default: false
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
+    t.string   "avatar"
     t.string   "asset_file_name"
     t.string   "asset_content_type"
     t.integer  "asset_file_size"

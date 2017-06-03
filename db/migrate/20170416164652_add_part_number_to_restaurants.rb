@@ -1,9 +1,9 @@
 class AddPartNumberToRestaurants < ActiveRecord::Migration[5.0]
    def up
-    #add_attachment :restaurants, :avatar
+     add_column :restaurants, :avatar, :string
   end
 
   def down
-    #remove_attachment :restaurants, :avatar
+  
   end
 end
