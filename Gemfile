@@ -33,6 +33,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 #https://github.com/carrierwaveuploader/carrierwave
 gem 'carrierwave', '~> 1.0'
+gem 'carrierwave-base64'
+gem 'cloudinary'
+gem "mini_magick"
+
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', github: 'sferik/rails_admin'
 gem 'rails_admin_rollincode', '~> 1.0'
